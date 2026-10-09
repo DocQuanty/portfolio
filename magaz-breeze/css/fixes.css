@@ -1,0 +1,7 @@
+/* 2026 fixes: best-sellers carousel showed four 85px cards on phones. */
+@media (max-width: 767px) {
+  .slider .slider__wrapper .slider__item { flex: 0 0 47%; max-width: 47%; margin-right: 12px; }
+}
+@media (max-width: 420px) {
+  .slider .slider__wrapper .slider__item { flex: 0 0 82%; max-width: 82%; }
+}

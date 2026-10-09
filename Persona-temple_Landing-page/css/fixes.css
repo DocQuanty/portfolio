@@ -1,0 +1,12 @@
+/* 2026 fixes: font path (fonts live next to css/, not inside it),
+   real headings instead of <title> in body, one column on phones. */
+@font-face {
+  font-family: 'Conv_HoboStd';
+  src: url("../fonts/HoboStd.woff2") format("woff2"), url("../fonts/HoboStd.woff") format("woff");
+  font-display: swap;
+}
+.card-title { display: block; margin: 0 0 12px; font: 700 1.5em/1.2 Roboto, Arial, sans-serif; }
+@media (max-width: 600px) {
+  .cards-blocks { grid-template-columns: 1fr; min-height: 0; }
+  .cards-blocks > * { grid-row: auto !important; grid-column: auto !important; }
+}

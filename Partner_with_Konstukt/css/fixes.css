@@ -1,0 +1,4 @@
+/* 2026 fixes: "All services" stretched to the row height and only its text was
+   clickable — keep it a compact button with the whole area as the link. */
+.link { align-self: flex-start; padding: 0; }
+.link a { display: block; padding: 12px 30px; }

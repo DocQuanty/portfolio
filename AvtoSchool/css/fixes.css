@@ -1,0 +1,14 @@
+/* 2026 fixes: sign-up card — background and dashed frame now cover the whole
+   form, the consent text no longer spills outside, decor sits beside the card. */
+.sign-up__backgr { inset: 0; width: 100%; height: 100%; }
+.sign-up__border { top: -12px; left: -12px; width: calc(100% + 24px); height: calc(100% + 24px); }
+.sign-up__backgr::before { left: calc(100% - 50px); }
+.sign-up__backgr::after { left: calc(100% + 40px); }
+.sign-up__content-block { padding: 40px; }
+
+/* Hero on phones: the photo sat under the text — move it below the copy. */
+@media (max-width: 767px) {
+  .online { background-size: 80% auto; background-position: center bottom; padding-bottom: 82vw; }
+  .sign-up__backgr::before, .sign-up__backgr::after { display: none; }
+  .sign-up__content-block { padding: 28px 20px; }
+}

@@ -1,0 +1,4 @@
+/* 2026 fixes: spacing between the projects list and the experience entries. */
+.block-main__projects { margin-bottom: 32px; }
+.work-experiance__title { display: inline-block; margin-top: 28px; }
+.work-experiance > .work-experiance__title:first-of-type { margin-top: 8px; }

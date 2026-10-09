@@ -19,7 +19,7 @@ img{
 
 @media(max-width:1200px){
     .container{
-        width: 830px;
+        max-width: 830px;
     }
 }
 
