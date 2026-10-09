@@ -26,29 +26,36 @@
     var back = document.createElement('a');
     back.className = 'pz-back';
     back.href = '../';
-    back.setAttribute('aria-label', 'Back to the layouts archive');
-    back.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span>Archive</span>';
+    back.setAttribute('aria-label', 'Назад до архіву версток');
+    back.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg><span>Архів</span>';
     document.body.appendChild(back);
   }
 
   function addHover() {
-    all(cfg('lift')).forEach(function (el) { el.classList.add('pz-lift'); });
+    all(cfg('lift')).filter(function (el) { return getComputedStyle(el).transform === 'none'; }).forEach(function (el) { el.classList.add('pz-lift'); });
     all(cfg('press')).forEach(function (el) { el.classList.add('pz-press'); });
     all(cfg('zoom')).forEach(function (el) { el.classList.add('pz-zoom'); });
+  }
+
+  // Elements that already move on their own (drawers, sliders, fixed panels)
+  // must not get our transform, or their own one is overridden.
+  function animatable(el) {
+    var cs = getComputedStyle(el);
+    return cs.transform === 'none' && cs.position !== 'fixed' && cs.position !== 'sticky' && cs.animationName === 'none';
   }
 
   function addReveal() {
     if (reduced || !('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('pz-ready');
 
-    all(cfg('hero')).forEach(function (el, i) {
+    all(cfg('hero')).filter(animatable).forEach(function (el, i) {
       el.style.setProperty('--pz-d', (i * 90) + 'ms');
       el.classList.add('pz-hero');
     });
 
     // Only elements below the fold start hidden, so nothing visible flickers.
     var targets = all(cfg('reveal')).filter(function (el) {
-      return !el.classList.contains('pz-hero') && el.getBoundingClientRect().top > innerHeight * 0.92;
+      return !el.classList.contains('pz-hero') && animatable(el) && el.getBoundingClientRect().top > innerHeight * 0.92;
     });
     var io = new IntersectionObserver(function (entries) {
       var batch = entries.filter(function (e) { return e.isIntersecting; });

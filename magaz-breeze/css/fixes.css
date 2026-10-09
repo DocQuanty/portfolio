@@ -5,3 +5,23 @@
 @media (max-width: 420px) {
   .slider .slider__wrapper .slider__item { flex: 0 0 82%; max-width: 82%; }
 }
+
+/* Phones: the header turned into a tall column of links. Account links go in
+   one row, categories become a horizontally scrollable strip of chips. */
+@media (max-width: 650px) {
+  .identification { width: auto !important; flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
+  .all-identification { flex-direction: column; align-items: center; }
+  .identification p { margin: 4px 0 !important; }
+  .navigation-content ul.list {
+    flex-direction: row !important; flex-wrap: nowrap !important; overflow-x: auto;
+    gap: 8px; margin: 0 !important; padding: 12px 12px 14px !important;
+    scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .navigation-content ul.list::-webkit-scrollbar { display: none; }
+  .navigation-content ul.list > li {
+    flex: 0 0 auto; margin: 0 !important; padding: 9px 16px !important; width: auto !important;
+    border: 1px solid #dcdcdc; border-radius: 999px; scroll-snap-align: start;
+  }
+  .navigation-content ul.list > li .btn, .navigation-content ul.list > li a { font-size: 13px !important; }
+  .navigation-content ul.list > li .content { display: none !important; }
+}

@@ -1,436 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="uk">
 <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЖК «Ильинские луга» — каталог новостроек</title>
-<link rel="stylesheet" href="css/fixes.css"><link rel="stylesheet" href="../assets/polish.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><meta name="description" content="Layout from the 2020–2021 front-end archive of Kostiantyn Yurchenko."></head>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оселя — каталог новобудов Києва</title>
+  <meta name="description" content="Демо-каталог новобудов із робочими фільтрами — верстка Костянтина Юрченка.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/catalog.css">
+  <link rel="stylesheet" href="../assets/polish.css">
+</head>
 <body>
+  <header class="site-header">
+    <div class="wrap site-header__row">
+      <a class="logo" href="./" aria-label="Оселя — на головну">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10v12H19v-8h-6v8H4z" fill="currentColor"/></svg>
+        <span>Оселя</span>
+      </a>
+      <nav class="site-nav" aria-label="Розділи">
+        <a class="is-active" href="#catalog">Новобудови</a>
+        <a href="#catalog">Вторинне житло</a>
+        <a href="#catalog">Іпотека</a>
+        <a href="#catalog">Забудовники</a>
+      </nav>
+      <a class="fav-counter" href="#catalog" title="Обране">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span data-fav-count>0</span>
+      </a>
+    </div>
+  </header>
 
-    <div class="toggle-sidebar">
-        <button class="menu-icon-wrapper">
+  <section class="intro wrap">
+    <p class="crumbs"><a href="./">Оселя</a> <span>/</span> Київ <span>/</span> Новобудови</p>
+    <h1>Новобудови Києва</h1>
+    <p class="intro__lead">Житлові комплекси від забудовників: ціни за м², строки здачі та відстань до метро.</p>
+  </section>
 
-            <div class="menu-icon"></div>
-
+  <main id="catalog" class="wrap layout">
+    <aside class="filters" id="filters" aria-label="Фільтри">
+      <div class="filters__head">
+        <h2>Фільтри</h2>
+        <button class="icon-btn filters__close" type="button" data-close-filters aria-label="Закрити фільтри">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
-    </div>
+      </div>
 
-
-    <div class="container">
-        <div class="row">
-            <main class="main card__holder">
-                <!-- CardStart -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card-->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card-->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card-->
-                <a class="card-link" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-
-
-
-                <a class="card-link card-link--hidden " href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card-->
-
-                <a class="card-link card-link--hidden" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Card -->
-
-                <a class="card-link card-link--hidden" href="">
-                    <div class="card">
-                        <div class="card__badges">
-                            <div class="card__badge card__badge--class">Комфорт </div>
-                            <div class="card__badge card__badge--credit">Рассрочка 12мес</div>
-                        </div>
-                        <div class="card__img">
-                            <img src="./img/card/1-2_825x510_e9f.jpg" alt="ЖК Ильинские луга">
-                        </div>
-                        <div class="card__content">
-                            <h4 class="card__title">ЖК Ильинские луга</h4>
-                            <div class="card__term">Срок сдачи до 4кв. 2022г.</div>
-                            <div class="card__metro">Октябрьская</div>
-                            <div class="card__address">пр. Льва Толстого 180А</div>
-                        </div>
-                    </div>
-                </a>
-
-
-
-
-                <button class="btn-more">
-                    <img src="./img/icon/plus.svg" alt="show-More-Icon">
-                    <span>Показать еще</span>
-                </button>
-
-            </main>
-
-            <aside class="sidebar">
-                <form>
-                    <!-- Widget -->
-                    <div class="widget">
-                        <div class="widget__title">
-                            Близость к метро
-                        </div>
-                        <div class="widget__body">
-
-                            <!-- location -->
-                            <div class="location">
-                                <div class="location__row">
-
-                                    <input type="checkbox" data-location-param id="location-01" checked
-                                        class="location__checkbox">
-                                    <label class="location__btn location__btn--active" for="location-01">&lt10</label>
-
-                                    <input type="checkbox" data-location-param id="location-02" checked
-                                        class="location__checkbox">
-                                    <label class="location__btn location__btn--active" for="location-02">10-20</label>
-
-                                    <input type="checkbox" data-location-param id="location-03"
-                                        class="location__checkbox">
-                                    <label class="location__btn " for="location-03">20-30</label>
-
-                                    <input type="checkbox" data-location-param id="location-04"
-                                        class="location__checkbox">
-                                    <label class="location__btn " for="location-04">30+</label>
-                                </div>
-                                <div class="location__row">
-                                    <input type="checkbox" id="location-05" class="location__checkbox">
-                                    <label class="location__btn" for="location-05">Любая</label>
-                                </div>
-                            </div>
-                            <!-- location -->
-                        </div>
-                    </div>
-                    <!-- Widget -->
-
-                    <div class="widget">
-                        <div class="widget__title">
-                            Близость к метро
-                        </div>
-                        <div class="widget__body">
-
-                            <label class="radio">
-                                <input class="radio__real" type="radio" name="term" checked>
-                                <span class="radio__fake"></span>
-                                <span class="radio__title">Любой</span>
-                            </label>
-
-
-                            <label class="radio">
-                                <input class="radio__real" type="radio" name="term">
-                                <span class="radio__fake"></span>
-                                <span class="radio__title">Сдан</span>
-                            </label>
-
-
-                            <label class="radio">
-                                <input class="radio__real" type="radio" name="term">
-                                <span class="radio__fake"></span>
-                                <span class="radio__title">В этом году</span>
-                            </label>
-
-
-                            <label class="radio">
-                                <input class="radio__real" type="radio" name="term">
-                                <span class="radio__fake"></span>
-                                <span class="radio__title">В следующем году</span>
-                            </label>
-
-                        </div>
-                    </div>
-
-                    <!-- Widget -->
-
-                    <div class="widget">
-                        <div class="widget__title">
-                            Дополнительные опции
-                        </div>
-                        <div class="widget__body">
-
-                            <label class="checkbox">
-                                <input class="checkbox__real" type="checkbox" name="value-01" checked>
-                                <span class="checkbox__fake"></span>
-                                <span class="checkbox__title">Двор без машин</span>
-                            </label>
-
-                            <label class="checkbox">
-                                <input class="checkbox__real" type="checkbox" name="value-02">
-                                <span class="checkbox__fake"></span>
-                                <span class="checkbox__title">Высокие потолки</span>
-                            </label>
-
-                            <label class="checkbox">
-                                <input class="checkbox__real" type="checkbox" name="value-03">
-                                <span class="checkbox__fake"></span>
-                                <span class="checkbox__title">Панорамные окна</span>
-                            </label>
-
-                            <label class="checkbox">
-                                <input class="checkbox__real" type="checkbox" name="value-04">
-                                <span class="checkbox__fake"></span>
-                                <span class="checkbox__title">Есть кладовые</span>
-                            </label>
-
-                            <label class="checkbox">
-                                <input class="checkbox__real" type="checkbox" name="value-05">
-                                <span class="checkbox__fake"></span>
-                                <span class="checkbox__title">Малоэтажный</span>
-                            </label>
-
-                            <div class="widget__hidden">
-
-                                <label class="checkbox">
-                                    <input class="checkbox__real" type="checkbox" name="value-06">
-                                    <span class="checkbox__fake"></span>
-                                    <span class="checkbox__title">Доп пункт1</span>
-                                </label>
-
-                                <label class="checkbox">
-                                    <input class="checkbox__real" type="checkbox" name="value-07">
-                                    <span class="checkbox__fake"></span>
-                                    <span class="checkbox__title">Доп пункт2</span>
-                                </label>
-
-                                <label class="checkbox">
-                                    <input class="checkbox__real" type="checkbox" name="value-08">
-                                    <span class="checkbox__fake"></span>
-                                    <span class="checkbox__title">Доп пункт3</span>
-                                </label>
-
-                            </div>
-
-                            <button class="widget__show-hidden">Показать еще</button>
-
-                        </div>
-                    </div>
-
-                    <!-- Widget -->
-
-                    <div class="widget">
-
-                        <div class="widget__body">
-
-                            <label class="toggle">
-                                <input class="toggle__real" type="checkbox" name="comission" checked>
-                                <span class="toggle__fake"></span>
-                                <span class="toggle__title">Услуги 0%</span>
-                            </label>
-
-                        </div>
-                    </div>
-
-                    <!-- Widget -->
-
-                    <div class="widget">
-
-                        <div class="widget__body">
-                            <button class="form-btn form-btn--submit">Применить фильтры</button>
-                            <button class="form-btn form-btn--reset">
-                                <img src="./img/icon/close.svg" alt="Сбросить фильтры">
-                                <span>Сбросить фильтры</span>
-                            </button>
-
-                        </div>
-                    </div>
-
-
-                </form>
-            </aside>
+      <fieldset class="group">
+        <legend>До метро пішки</legend>
+        <div class="segmented" role="radiogroup" data-filter="metro">
+          <button type="button" role="radio" data-value="10">&lt;10 хв</button>
+          <button type="button" role="radio" data-value="20">до 20</button>
+          <button type="button" role="radio" data-value="30">до 30</button>
+          <button type="button" role="radio" data-value="any" class="is-on" aria-checked="true">Будь-яка</button>
         </div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Здача</legend>
+        <label class="radio"><input type="radio" name="handover" value="any" checked><span>Будь-яка</span></label>
+        <label class="radio"><input type="radio" name="handover" value="done"><span>Уже здано</span></label>
+        <label class="radio"><input type="radio" name="handover" value="2026"><span>Цього року</span></label>
+        <label class="radio"><input type="radio" name="handover" value="2027"><span>Наступного року</span></label>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Клас житла</legend>
+        <div class="chips" data-filter="class">
+          <button type="button" data-value="Економ">Економ</button>
+          <button type="button" data-value="Комфорт">Комфорт</button>
+          <button type="button" data-value="Бізнес">Бізнес</button>
+          <button type="button" data-value="Преміум">Преміум</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Ціна за м², до <output data-price-out>90 000</output> грн</legend>
+        <input class="range" type="range" min="30000" max="90000" step="2500" value="90000" data-filter="price" aria-label="Максимальна ціна за квадратний метр">
+        <div class="range__scale"><span>30 тис.</span><span>90 тис.</span></div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Додатково</legend>
+        <label class="check"><input type="checkbox" value="yard"><span>Двір без машин</span></label>
+        <label class="check"><input type="checkbox" value="ceiling"><span>Стелі від 3 м</span></label>
+        <label class="check"><input type="checkbox" value="panorama"><span>Панорамні вікна</span></label>
+        <label class="check"><input type="checkbox" value="storage"><span>Комори</span></label>
+        <label class="check"><input type="checkbox" value="lowrise"><span>Малоповерховий</span></label>
+      </fieldset>
+
+      <label class="switch">
+        <input type="checkbox" data-filter="installment">
+        <span class="switch__track"><span class="switch__thumb"></span></span>
+        <span>Розстрочка 0%</span>
+      </label>
+
+      <div class="filters__actions">
+        <button class="btn btn--primary" type="button" data-close-filters>Показати <span data-found-btn>12</span></button>
+        <button class="btn btn--ghost" type="button" data-reset>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Скинути фільтри
+        </button>
+      </div>
+    </aside>
+
+    <section class="results" aria-live="polite">
+      <div class="toolbar">
+        <p class="toolbar__count">Знайдено <b data-found>12</b> <span data-found-word>ЖК</span></p>
+        <div class="toolbar__right">
+          <button class="btn btn--ghost toolbar__filters" type="button" data-open-filters>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Фільтри <span class="badge" data-active-count hidden></span>
+          </button>
+          <label class="select">
+            <span class="sr-only">Сортування</span>
+            <select data-sort>
+              <option value="popular">Спершу популярні</option>
+              <option value="cheap">Спершу дешевші</option>
+              <option value="expensive">Спершу дорожчі</option>
+              <option value="metro">Ближче до метро</option>
+              <option value="soon">Раніше здача</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid" data-grid></div>
+
+      <div class="empty" data-empty hidden>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 54V28L32 12l22 16v26H40V38H24v16z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <h3>Нічого не знайшлося</h3>
+        <p>Спробуйте розширити ціну або прибрати частину опцій.</p>
+        <button class="btn btn--primary" type="button" data-reset>Скинути фільтри</button>
+      </div>
+
+      <button class="more" type="button" data-more>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Показати ще
+      </button>
+    </section>
+  </main>
+
+  <div class="scrim" data-close-filters></div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Демо-каталог: назви комплексів, ціни й строки умовні. Верстка — Костянтин Юрченко, 2021, оновлено 2026.</p>
     </div>
+  </footer>
 
-    <script src="./js/app.js"></script>
-<script src="../assets/polish.js" data-accent="#ffcb24" data-hero=".sidebar" data-reveal=".card-link, .btn-more" data-lift=".card" data-press=".form-btn, .btn-more, .location__btn" data-zoom=".card__img" defer></script></body>
+  <template id="card-tpl">
+    <article class="card">
+      <a class="card__link" href="#catalog"></a>
+      <div class="card__media">
+        <div class="card__art"></div>
+        <div class="card__badges"></div>
+        <button class="card__fav" type="button" aria-pressed="false" aria-label="Додати в обране">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="card__progress" title="Готовність будівництва"><span></span></div>
+      </div>
+      <div class="card__body">
+        <p class="card__price"></p>
+        <h3 class="card__title"></h3>
+        <p class="card__meta card__metro"><img src="./img/icon/metro-logo.svg" alt="" width="14" height="14"><span></span></p>
+        <p class="card__meta card__term"></p>
+        <p class="card__flats"></p>
+      </div>
+    </article>
+  </template>
 
+  <script src="./js/catalog.js" defer></script>
+  <script src="../assets/polish.js" data-accent="#f5b700" defer></script>
+</body>
 </html>
